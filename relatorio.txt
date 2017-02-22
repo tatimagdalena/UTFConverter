@@ -1,0 +1,71 @@
+Fernando Homem da Costa - 1211971 - 3WB
+Tatiana de Oliveira Magdalena - 1321440 - 3WB
+
+
+
+
+Testes:
+
+/******************************************************/
+/****** Conversão de UTF-8 para UTF-32(conv8_32) ******/
+
+
+/*** Arquivos sem erros ***/
+
+Os testes com estes arquivos compilaram e executaram sem erros. 
+Para verificar se o arquivo gerado estava como esperado, ele foi aberto em um HexEditor (Free Hex Editor Neo), e o arquivo correspondente que já estava disponível também. Utilizou-se então uma ferramenta online de comparação de texto (http://text-compare.com/) para saber se os bytes estavam iguais. Em todos os casos obteu-se o resultado de que os textos eram equivalentes.
+
+utf8_peq, ordem Little: saída comparada com utf32_peq_little -> OK.
+utf8_peq, ordem Big: saída comparada com utf32_peq_big -> OK.
+utf8_grande, ordem Little: saída comparada com utf32_grande_little -> OK.
+utf8_grande, ordem Big: saída comparada com utf32_grande_big -> OK.
+
+
+/*** Arquivos com erros ***/
+
+Os testes com estes arquivos compilaram normalmente e executaram com erros testados, como esperado.
+
+Saídas:
+
+utf8_inv_1 -> Erro de codificacao no 37-esimo byte
+utf8_inv_2 -> Erro de codificacao no 36-esimo byte
+utf8_inv_3 -> Erro de codificacao no 38-esimo byte
+
+
+/*** Conclusão ***/
+
+Tudo ocorreu como esperado.
+
+
+/******************************************************/
+/****** Conversão de UTF-32 para UTF-8(conv32_8) ******/
+
+
+/*** Arquivos sem erros ***/
+
+Os testes com estes arquivos compilaram e executaram sem erros. 
+A verificação do arquivo de saída se deu como a da função anterior. Em todos os casos obteu-se o resultado de que os textos eram equivalentes.
+
+utf32_peq_little: saída comparada com utf8_peq -> OK.
+utf32_peq_big: saída comparada com utf8_peq -> OK.
+
+utf32_grande_little: saída comparada com utf8_grande -> OK.
+utf32_grande_big: saída comparada com utf8_grande -> OK.
+
+
+/*** Arquivos com erros ***/
+
+Os testes com estes arquivos compilaram normalmente e executaram com erros testados, como esperado.
+
+Saídas:
+
+utf32_inv_1 -> Erro de codificacao no 1o byte.
+utf32_inv_2 -> Erro de codificacao no 20-esimo byte.
+utf32_inv_3 -> Erro de codificacao no 29-esimo byte.
+utf32_inv_4 -> Erro de codificacao no 20-esimo byte.
+utf32_inv_5 -> Erro de codificacao no 29-esimo byte.
+
+
+/*** Conclusão ***/
+
+Tudo ocorreu como esperado.
